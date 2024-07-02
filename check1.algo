@@ -1,0 +1,54 @@
+ALGORITHM check1
+VAR
+    i:INTEGER;
+    str:STRING;
+    count_char:INTEGER:= 0;
+    count_word:INTEGER:= 1;
+    count_vowels:INTEGER:= 0;
+    vowels : array OF CHAR:= ["a","e","i","o","u","A","E","I","O","U"];
+    
+BEGIN
+    REPEAT      
+            Write("enter the sentence:")
+            Read(str)
+    UNTIL (str.length > 0 AND str[str.length - 1] == '.')
+
+    FOR i from 0 to 10 str.length() -1 STEP step DO
+    IF (str[i]<> " ") THEN
+        count_char := count_char + 1;
+    END_IF
+    END_FOR
+    
+FOR i from 0 to  str.length() -1 STEP step DO
+IF (str[i]= " ") THEN
+    count_word := count_word + 1;
+    END_IF
+    END_FOR
+
+    FOR i from 0 to str.length() -1 STEP step DO
+    IF (str[i] in vowels) THEN
+    count_vowels:=count_vowels + 1;
+    END_FOR
+    END_IF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+write("the number of characters in the sentence is:", count_char)
+write("the number of words in the sentence is:", count_word)
+write("the number of vowels in the sentence is:",count_vowels)
+END
